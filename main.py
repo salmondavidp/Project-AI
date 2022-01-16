@@ -7,7 +7,7 @@ import json
 import os
 import pyaudio
 import pyttsx3
-from core import SystemInfo
+from core._inher_ import SystemInfo
 
 #speech Recg
 model = Model('model')
