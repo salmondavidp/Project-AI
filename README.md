@@ -8,5 +8,21 @@ Call Her Hi "JEDA"
 
 JEDA is Reliable and easy to use, listens to you, and answers questions Faster.
 
-Funtcions
-    Speach Recongnation
+Functions 
+    speach recognation
+    A
+
+
+
+
+
+
+
+
+
+
+
+
+this project is created with inspiration from various youtube channels 
+if any complaints regards please inform before any actions, This is a collage projext not comercial use 
+thank you 
