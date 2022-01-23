@@ -1,0 +1,5 @@
+Copy and paste in terminal
+
+"pip install pyaudio"  if error occurs  There is a file intall it or download & Install "https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio"
+"pip intall pyttsx3"
+"pip install pocketsphix"if error occurs  There is a file intall it or download & Install "https://www.lfd.uci.edu/~gohlke/pythonlibs/"  Ctrl+F type Pytttsx
