@@ -1,16 +1,13 @@
 # JEDA
 
-A Virtual Assistant Made By CS Brach 5th sem AEIP Gada
+A Virtual Assistant Made By CS Brach 5th sem AEIP Gadag
 
 This project aims to Make Virtual assistants available for everyone 
 
-Call Her Hi "JEDA"
+Call Her Hi "Name"
 
-JEDA is Reliable and easy to use, listens to you, and answers questions Faster.
+"Name" is Reliable and easy to use, listens to you, and answers questions Faster.
 
-Functions 
-    speach recognation
-    A
 
 
 
