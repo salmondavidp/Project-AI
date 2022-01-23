@@ -1,5 +1,8 @@
 #import Component/libreary/model
+<<<<<<< Updated upstream
 from cgitb import text
+=======
+>>>>>>> Stashed changes
 from pyexpat import model
 from unittest import result
 from vosk import Model, KaldiRecognizer
@@ -7,15 +10,22 @@ import json
 import os
 import pyaudio
 import pyttsx3
+<<<<<<< Updated upstream
 from core import SystemInfo
 
+=======
+from src import SystemInfo
+>>>>>>> Stashed changes
 #speech Recg
 model = Model('model')
 rec = KaldiRecognizer(model, 16000)
 #speech Synt
+<<<<<<< Updated upstream
 def speak(text):
     engine.say(text)
     engine.runAndWait()
+=======
+>>>>>>> Stashed changes
 engine = pyttsx3.init()
 
 p = pyaudio.PyAudio()
@@ -29,6 +39,7 @@ while True:
     if rec.AcceptWaveform(data):
        result = rec.Result()
        result = json.loads(result)
+<<<<<<< Updated upstream
        text = result['text']
 
 
@@ -38,5 +49,11 @@ while True:
     
        
 
+=======
+       
+
+       print (result["text"])
+
+>>>>>>> Stashed changes
     
     
