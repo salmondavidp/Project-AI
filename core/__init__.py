@@ -10,3 +10,8 @@ class SystemInfo:
         now = datetime.datetime.now()
         answer = 'The time now is {} {}'.format(now.hour, now.minute)
         return answer
+    @staticmethod
+    def get_time():
+        now = datetime.datetime.now()
+        answer = 'The day is {} {} {}'.format(now.day,now.month, now.year)
+        return answer    
