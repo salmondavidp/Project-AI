@@ -1,0 +1,6 @@
+commands :
+ # time 
+ -command:
+      input: What time is?
+      enitiy: time
+      action: getTime

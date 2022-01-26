@@ -6,7 +6,14 @@ class SystemInfo:
         pass
     
     @staticmethod
+    def get_date():
+        now = datetime.datetime.now()
+        answer = 'The date is {} {} {}'.format( now.day,now.month, now.year)
+        return answer
+    @staticmethod
     def get_time():
         now = datetime.datetime.now()
-        answer = 'The time now is {} {}'.format(now.hour, now.minute)
+        answer = 'The time is {} {}'.format( now.minute, now.hour, now.second)
         return answer
+      
+  
