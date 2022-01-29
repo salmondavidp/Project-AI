@@ -53,10 +53,8 @@ while TRUE:
     if rec.AcceptWaveform(data):
        result = rec.Result()
        result = json.loads(result)
-       text= result['text']
-       if 'alexa' in text:
-            text = text.replace('alexa','')
-            print(text)
+       text= result['text'] 
+       print(result)
        
        
 
@@ -73,11 +71,9 @@ while TRUE:
    
        if text == 'what is your name' or text == 'tell me your name':
             speak('My name is Mads')           
-def song():       
+
        if 'play' in text:
             song = text.replace('play','')
-            print(text)
-            speak('playing song'+song )
-            print('playing'+ song)
-            pywhatkit.playonyt(song)
-song()       
+            speak('playing'+ song) 
+            print(song)
+            pywhatkit.playonyt(song)   
