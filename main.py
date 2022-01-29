@@ -3,11 +3,13 @@ from asyncore import read
 from cgitb import text
 from cmath import inf
 from pickle import TRUE
+import pywhatkit
 from pyexpat import model
 import queue
 import string
 import webbrowser
 from unittest import result
+import pywhatkit
 from vosk import Model, KaldiRecognizer
 import json
 import os
@@ -29,10 +31,8 @@ def speak(text):
     engine.runAndWait()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
- #change index to change voices
-  
 
-
+#open mic 
 p = pyaudio.PyAudio()
 stream = p.open(format=pyaudio.paInt16,channels=1,rate=16000, input=True, frames_per_buffer=8000 )
 stream.chunk=1024 #this will break in chunks
@@ -47,15 +47,16 @@ if __name__ == '__main__':
      Take()
 
 while TRUE:
-    data = stream.read(stream.chunk,exception_on_overflow=False) #infinity aya ba 
-    ##if  len(data) == 0 :
-      ##break
 
+    data = stream.read(stream.chunk,exception_on_overflow=False) 
+ 
     if rec.AcceptWaveform(data):
        result = rec.Result()
        result = json.loads(result)
-       print(result)
        text= result['text']
+       if 'alexa' in text:
+            text = text.replace('alexa','')
+            print(text)
        
        
 
@@ -69,8 +70,14 @@ while TRUE:
        if text == 'open google chrome' or text == 'run chrome'  :
             speak('Openng google chrome') 
             os.startfile("C:\Program Files\Google\Chrome\Application\chrome.exe")
-            
+   
        if text == 'what is your name' or text == 'tell me your name':
             speak('My name is Mads')           
-     
-      
+def song():       
+       if 'play' in text:
+            song = text.replace('play','')
+            print(text)
+            speak('playing song'+song )
+            print('playing'+ song)
+            pywhatkit.playonyt(song)
+song()       
