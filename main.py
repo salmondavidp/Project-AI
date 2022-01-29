@@ -13,6 +13,7 @@ import json
 import os
 import pyaudio
 import pyttsx3
+from selenium import webdriver 
 from core import SystemInfo
 from threading import Event
 import time
@@ -27,17 +28,29 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+ #change index to change voices
+  
+
 
 p = pyaudio.PyAudio()
 stream = p.open(format=pyaudio.paInt16,channels=1,rate=16000, input=True, frames_per_buffer=8000 )
 stream.chunk=1024 #this will break in chunks
 stream.start_stream()
 
+def Hello():
+     speak("hello sir I am your desktop assistant. Tell me how may I help you")
+
+def Take():
+     Hello()
+if __name__ == '__main__':
+     Take()
+
 while TRUE:
     data = stream.read(stream.chunk,exception_on_overflow=False) #infinity aya ba 
     ##if  len(data) == 0 :
       ##break
-    
+
     if rec.AcceptWaveform(data):
        result = rec.Result()
        result = json.loads(result)
@@ -46,21 +59,18 @@ while TRUE:
        
        
 
-       
-
        #Commands
-
-
        if text == 'what is the date' or text == 'tell me the' :
             speak(SystemInfo.get_date())
           
        if text == 'what is the time' or text == 'tell me' :
             speak(SystemInfo.get_time()) 
             
-       if text == 'open chrome' or text == 'run chrome'  :
+       if text == 'open google chrome' or text == 'run chrome'  :
             speak('Openng google chrome') 
             os.startfile("C:\Program Files\Google\Chrome\Application\chrome.exe")
             
        if text == 'what is your name' or text == 'tell me your name':
-            speak('My name is __')
-            
+            speak('My name is Mads')           
+     
+      
