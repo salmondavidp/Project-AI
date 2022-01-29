@@ -2,6 +2,7 @@
 from asyncore import read
 from cgitb import text
 from cmath import inf
+from distutils.log import info
 from pickle import TRUE
 import pywhatkit
 from pyexpat import model
@@ -11,6 +12,7 @@ import webbrowser
 from unittest import result
 import pywhatkit
 from vosk import Model, KaldiRecognizer
+import wikipedia
 import json
 import os
 import pyaudio
@@ -53,6 +55,7 @@ while TRUE:
     if rec.AcceptWaveform(data):
        result = rec.Result()
        result = json.loads(result)
+     
        text= result['text'] 
        print(result)
        
@@ -72,8 +75,13 @@ while TRUE:
        if text == 'what is your name' or text == 'tell me your name':
             speak('My name is Mads')           
 
-       if 'play' in text:
-            song = text.replace('play','')
+       if 'mad play' in text:
+            song = text.replace('mad play','')
             speak('playing'+ song) 
             print(song)
             pywhatkit.playonyt(song)   
+
+       if 'what is' in text:
+          ask = text.replace('what is','')
+          info= wikipedia.summary(ask,1)
+          speak(info)              
