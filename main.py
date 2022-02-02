@@ -5,6 +5,7 @@ from cmath import inf
 from distutils.log import info
 from pickle import TRUE
 import pywhatkit
+from google import google
 from pyexpat import model
 import queue
 import string
@@ -81,7 +82,8 @@ while TRUE:
             print(song)
             pywhatkit.playonyt(song)   
 
-       if 'what is' in text:
-          ask = text.replace('what is','')
-          info= wikipedia.summary(ask,1)
-          speak(info)              
+       
+num_page = 3
+search_results = google.search("This is my query", num_page)
+for result in search_results:
+    print(result.description)
