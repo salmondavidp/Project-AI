@@ -1,6 +1,6 @@
 # JEDA
 
-A Virtual Assistant Made By CS Brach 5th sem AEIP Gada
+A Virtual Assistant Made By CS Brach 5th sem AEIP Gadag
 
 This project aims to Make Virtual assistants available for everyone 
 
